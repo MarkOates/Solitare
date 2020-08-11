@@ -1,4 +1,22 @@
+properties:
+
+
+  - name: cards
+    type: std::vector<Card>
+    init_with: '{}'
+
+
 functions:
+
+
   - name: run
     type: std::string
     body: return "Hello World!";
+
+
+dependencies:
+
+
+  - symbol: std::vector<Card>
+    headers: [ vector, Card.hpp ]
+
