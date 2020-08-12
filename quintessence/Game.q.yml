@@ -6,6 +6,10 @@ properties:
     type: Deck
     init_with: '{}'
     getter: true
+  - name: row_stacks
+    type: std::vector<std::vector<std::tuple<bool, Card>>>
+    init_with: '{}'
+    getter: true
 
 
 functions:
@@ -15,6 +19,8 @@ functions:
     type: void
     body: |
       deck = DeckFactory::generate_classic_52_playing_card_deck();
+      row_stacks.clear();
+      row_stacks.resize(7);
       return;
     body_dependency_symbols:
       - DeckFactory
@@ -33,4 +39,6 @@ dependencies:
     headers: [ Deck.hpp ]
   - symbol: DeckFactory
     headers: [ DeckFactory.hpp ]
+  - symbol: std::vector<std::vector<std::tuple<bool, Card>>>
+    headers: [ vector, tuple, Card.hpp ]
 
