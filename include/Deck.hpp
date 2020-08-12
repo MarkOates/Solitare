@@ -16,8 +16,10 @@ public:
    ~Deck();
 
 
+   std::vector<Card> get_cards();
 std::string shuffle();
 Card draw_card();
+bool is_empty();
 };
 
 

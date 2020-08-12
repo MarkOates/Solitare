@@ -20,14 +20,18 @@ Deck::~Deck()
 }
 
 
+std::vector<Card> Deck::get_cards()
+{
+   return cards;
+}
+
+
 std::string Deck::shuffle()
 {
 std::random_device rd;
 std::mt19937 g(rd());
 
 std::shuffle(cards.begin(), cards.end(), g);
-
-return "";
 
 }
 
@@ -43,6 +47,11 @@ Card card = cards.back();
 cards.pop_back();
 return card;
 
+}
+
+bool Deck::is_empty()
+{
+return cards.empty();
 }
 
 

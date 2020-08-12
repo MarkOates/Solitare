@@ -4,6 +4,7 @@ properties:
   - name: cards
     type: std::vector<Card>
     init_with: '{}'
+    getter: true
 
 
 functions:
@@ -16,8 +17,6 @@ functions:
       std::mt19937 g(rd());
 
       std::shuffle(cards.begin(), cards.end(), g);
-
-      return "";
     body_dependency_symbols:
       - std::shuffle
 
@@ -29,6 +28,11 @@ functions:
       Card card = cards.back();
       cards.pop_back();
       return card;
+
+
+  - name: is_empty
+    type: bool
+    body: return cards.empty();
 
 
 dependencies:
