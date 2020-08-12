@@ -1,4 +1,36 @@
+
+properties:
+
+
+  - name: deck
+    type: Deck
+    init_with: '{}'
+    getter: true
+
+
 functions:
-  - name: run
-    type: std::string
-    body: return "Hello World!";
+
+
+  - name: start
+    type: void
+    body: |
+      deck = DeckFactory::generate_classic_52_playing_card_deck();
+      return;
+    body_dependency_symbols:
+      - DeckFactory
+
+
+  - name: deck_num_cards
+    type: int
+    body: |
+      return deck.num_cards();
+
+
+dependencies:
+
+
+  - symbol: Deck
+    headers: [ Deck.hpp ]
+  - symbol: DeckFactory
+    headers: [ DeckFactory.hpp ]
+

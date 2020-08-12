@@ -1,0 +1,20 @@
+functions:
+
+
+  - name: generate_classic_52_playing_card_deck
+    static: true
+    type: Deck
+    body:
+      Deck result = {};
+      for (unsigned i=0; i<52; i++)
+      {
+         result.put_card_on_top_of_deck(Card());
+      }
+      return result;
+
+
+dependencies:
+
+  - symbol: Deck
+    headers: [ Deck.hpp ]
+

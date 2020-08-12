@@ -1,3 +1,4 @@
+
 properties:
 
 
@@ -8,6 +9,17 @@ properties:
 
 
 functions:
+
+
+  - name: put_card_on_top_of_deck
+    type: void
+    parameters:
+      - name: card
+        type: Card
+        default_argument: '{}'
+    body: |
+      cards.push_back(card);
+      return;
 
 
   - name: shuffle
@@ -30,9 +42,14 @@ functions:
       return card;
 
 
-  - name: is_empty
+  - name: empty
     type: bool
     body: return cards.empty();
+
+
+  - name: num_cards
+    type: int
+    body: return cards.size();
 
 
 dependencies:

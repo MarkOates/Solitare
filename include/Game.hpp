@@ -1,19 +1,22 @@
 #pragma once
 
 
-#include <string>
+#include <Deck.hpp>
 
 
 class Game
 {
 private:
+   Deck deck;
 
 public:
    Game();
    ~Game();
 
 
-std::string run();
+   Deck get_deck();
+void start();
+int deck_num_cards();
 };
 
 

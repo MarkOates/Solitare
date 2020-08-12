@@ -26,6 +26,13 @@ std::vector<Card> Deck::get_cards()
 }
 
 
+void Deck::put_card_on_top_of_deck(Card card)
+{
+cards.push_back(card);
+return;
+
+}
+
 std::string Deck::shuffle()
 {
 std::random_device rd;
@@ -49,9 +56,14 @@ return card;
 
 }
 
-bool Deck::is_empty()
+bool Deck::empty()
 {
 return cards.empty();
+}
+
+int Deck::num_cards()
+{
+return cards.size();
 }
 
 

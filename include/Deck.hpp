@@ -17,9 +17,11 @@ public:
 
 
    std::vector<Card> get_cards();
+void put_card_on_top_of_deck(Card card={});
 std::string shuffle();
 Card draw_card();
-bool is_empty();
+bool empty();
+int num_cards();
 };
 
 

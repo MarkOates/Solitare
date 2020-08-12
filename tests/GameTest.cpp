@@ -8,9 +8,16 @@ TEST(GameTest, can_be_created_without_blowing_up)
    Game game;
 }
 
-TEST(GameTest, run__returns_the_expected_response)
+TEST(GameTest, deck__has_a_getter_and_is_initialized_as_empty)
 {
    Game game;
-   std::string expected_string = "Hello World!";
-   EXPECT_EQ(expected_string, game.run());
+   ASSERT_EQ(0, game.deck_num_cards());
 }
+
+TEST(GameTest, start__create_a_new_shuffled_52_card_deck)
+{
+   Game game;
+   game.start();
+   ASSERT_EQ(52, game.deck_num_cards());
+}
+
