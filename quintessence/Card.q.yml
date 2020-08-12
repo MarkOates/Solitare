@@ -1,8 +1,13 @@
+properties:
 
-functions:
 
+  - name: value
+    type: int
+    init_with: 0
+    constructor_arg: true
+  - name: suit
+    type: int
+    init_with: 0
+    constructor_arg: true
 
-  - name: run
-    type: std::string
-    body: return "Hello World!";
 

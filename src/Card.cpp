@@ -6,7 +6,9 @@
 
 
 
-Card::Card()
+Card::Card(int value, int suit)
+   : value(value)
+   , suit(suit)
 {
 }
 
@@ -16,9 +18,5 @@ Card::~Card()
 }
 
 
-std::string Card::run()
-{
-return "Hello World!";
-}
 
 
