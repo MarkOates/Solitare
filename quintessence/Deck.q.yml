@@ -9,9 +9,26 @@ properties:
 functions:
 
 
-  - name: run
+  - name: shuffle
     type: std::string
-    body: return "Hello World!";
+    body: |
+      std::random_device rd;
+      std::mt19937 g(rd());
+
+      std::shuffle(cards.begin(), cards.end(), g);
+
+      return "";
+    body_dependency_symbols:
+      - std::shuffle
+
+
+  - name: draw_card
+    type: Card
+    guards: [ (!cards.empty()) ]
+    body: |
+      Card card = cards.back();
+      cards.pop_back();
+      return card;
 
 
 dependencies:
@@ -19,4 +36,8 @@ dependencies:
 
   - symbol: std::vector<Card>
     headers: [ vector, Card.hpp ]
+  - symbol: Card
+    headers: [ vector, Card.hpp ]
+  - symbol: std::shuffle
+    headers: [ random, algorithm ]
 

@@ -16,7 +16,8 @@ public:
    ~Deck();
 
 
-std::string run();
+std::string shuffle();
+Card draw_card();
 };
 
 
