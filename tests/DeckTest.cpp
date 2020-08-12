@@ -8,9 +8,18 @@ TEST(DeckTest, can_be_created_without_blowing_up)
    Deck deck;
 }
 
+TEST(DeckTest, cards__initializs_to_empty)
+{
+   Deck deck;
+   ASSERT_EQ(true, deck.get_cards().empty());
+}
+
 TEST(DeckTest, put_card_on_top_of_deck__will_place_a_card_on_the_deck)
 {
-   // TODO
+   Deck deck;
+   deck.put_card_on_top_of_deck(Card());
+   ASSERT_EQ(false, deck.get_cards().empty());
+   ASSERT_EQ(1, deck.num_cards());
 }
 
 TEST(DeckTest, shuffle__will_randomize_the_order_of_the_cards)
