@@ -5,10 +5,10 @@ functions:
     static: true
     type: Deck
     body:
-      // When you first open a deck, you'll usually see the Jokers at the face, followed by the
+      // "When you first open a deck, you'll usually see the Jokers at the face, followed by the
       // Spades and Diamonds in ascending order, then the Clubs and Hearts in descending order.
       // At the very back or top of the deck, you'll get a few ad cards - or perhaps a double
-      // backer or gimmick card, depending on the deck.
+      // backer or gimmick card, depending on the deck."
       //
       // - https://ambitiouswithcards.com/new-deck-order
 
