@@ -27,7 +27,7 @@ Deck DeckFactory::generate_classic_52_playing_card_deck()
 
 Deck result = {};
 
-// 2 jokers
+// 2 jokers (not included in a classic 52-card deck)
 // result.put_card_on_top_of_deck(Card(0, 0));
 // result.put_card_on_top_of_deck(Card(0, 0));
 
