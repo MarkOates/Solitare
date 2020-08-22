@@ -60,9 +60,9 @@ TEST(GameTest, start__will_create_4_empty_piles_for_the_foundations)
    std::vector<std::vector<Deck>> foundations = game.get_foundations();
    ASSERT_EQ(4, foundations.size());
 
-   for (auto &row_stack : foundations)
+   for (auto &foundation : foundations)
    {
-      ASSERT_EQ(true, row_stack.empty());
+      ASSERT_EQ(true, foundation.empty());
    }
 }
 
