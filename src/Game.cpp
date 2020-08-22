@@ -59,6 +59,8 @@ waste.clear();
 foundations.clear();
 foundations.resize(4);
 
+deal_cards();
+
 set_state_playing();
 
 return;
@@ -73,9 +75,22 @@ if (tableau_column_num < 0 || tableau_column_num >= tableau.size())
    throw std::runtime_error("invalid tableau_column_num");
 }
 
-// if topmost card is already flipped up, just return
+// tableau column cannot be empty
+std::vector<std::tuple<bool, Card>> &tableau_column = tableau[tableau_column_num];
+if (tableau_column.empty())
+{
+   throw std::runtime_error("tableau_column is empty");
+}
 
-// TODO
+// if topmost card is already flipped up, just return
+std::tuple<bool, Card> &topmost_card = tableau_column.back();
+
+// if topmost card is already flipped up, just return
+if (std::get<0>(topmost_card) == true) return;
+
+// flip the to face up
+if (std::get<0>(topmost_card) = true) return;
+
 return;
 
 }
@@ -128,6 +143,12 @@ void Game::move_topmost_tableau_row_card_to_foundation(int tableau_column_num)
 // the topmost card in the tableau_column_num must be face-up
 
 // TODO
+return;
+
+}
+
+void Game::deal_cards()
+{
 return;
 
 }

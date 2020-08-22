@@ -75,6 +75,12 @@ TEST(GameTest,
 }
 
 TEST(GameTest,
+   flip_topmost_card_on_tableau_column_to_face_up__on_a_column_that_is_empty__raises_an_error)
+{
+   // TODO
+}
+
+TEST(GameTest,
    flip_topmost_card_on_tableau_column_to_face_up__if_the_topmost_card_is_already_up__does_nothing)
 {
    // TODO
