@@ -11,7 +11,7 @@ properties:
 functions:
 
 
-  - name: put_card_on_top_of_deck
+  - name: put_card_on_top
     type: void
     parameters:
       - name: card

@@ -26,7 +26,7 @@ std::vector<Card> Deck::get_cards()
 }
 
 
-void Deck::put_card_on_top_of_deck(Card card)
+void Deck::put_card_on_top(Card card)
 {
 cards.push_back(card);
 return;

@@ -14,10 +14,10 @@ TEST(DeckTest, cards__initializs_to_empty)
    ASSERT_EQ(true, deck.get_cards().empty());
 }
 
-TEST(DeckTest, put_card_on_top_of_deck__will_place_a_card_on_the_deck)
+TEST(DeckTest, put_card_on_top__will_place_a_card_on_the_deck)
 {
    Deck deck;
-   deck.put_card_on_top_of_deck(Card());
+   deck.put_card_on_top(Card());
    ASSERT_EQ(false, deck.get_cards().empty());
    ASSERT_EQ(1, deck.num_cards());
 }
@@ -26,9 +26,9 @@ TEST(DeckTest, clear__will_remove_all_cards_from_the_deck)
 {
    Deck deck;
 
-   deck.put_card_on_top_of_deck(Card());
-   deck.put_card_on_top_of_deck(Card());
-   deck.put_card_on_top_of_deck(Card());
+   deck.put_card_on_top(Card());
+   deck.put_card_on_top(Card());
+   deck.put_card_on_top(Card());
 
    deck.clear();
 
