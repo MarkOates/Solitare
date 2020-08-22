@@ -29,6 +29,8 @@ functions:
   - name: start
     type: void
     body: |
+      // Rules of solitare: https://bicyclecards.com/how-to-play/solitaire/
+
       stock = DeckFactory::generate_classic_52_playing_card_deck();
 
       tableau.clear();
@@ -53,14 +55,16 @@ functions:
         default_argument: 0
     body: |
       // tableau_column_num must be valid
-      // 
+      // if topmost card is already flipped up, just return
 
-      // if topmost card is already flipped up, do nothing
+      // TODO
       return;
 
 
   - name: place_top_stock_card_on_waste
     body: |
+      // if stock is empty, raise exception
+
       // TODO
       return;
 
@@ -71,6 +75,9 @@ functions:
         type: int
         default_argument: 0
     body: |
+      // if waste is empty, raise exception
+      // if top waste card does not fit onto any foundations, raise exception
+
       // TODO
       return;
 
@@ -96,6 +103,11 @@ functions:
         type: int
         default_argument: 0
     body: |
+      // source_tableau_column_num must be valid
+      // destination_tableau_column_num must be valid
+      // num_cards_from_topmost_card must not exceed size of cards in tableau row
+      // num_cards_from_topmost_card must be face up
+
       // TODO
       return;
 
