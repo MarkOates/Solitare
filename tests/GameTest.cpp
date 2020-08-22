@@ -58,6 +58,9 @@ TEST(GameTest, start__will_set_all_the_cards_in_each_tableau_column_face_down_an
    for (unsigned column=0; column<7; column++)
    {
       std::vector<std::tuple<bool, Card>> tableau_column = tableau[column];
+
+      ASSERT_EQ(false, tableau_column.empty());
+
       for (unsigned i=0; i<tableau_column.size(); i++)
       {
          std::tuple<bool, Card> card = tableau_column[i];
