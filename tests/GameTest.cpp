@@ -61,12 +61,16 @@ TEST(GameTest, start__will_set_all_the_cards_in_each_tableau_column_face_down_an
 
       ASSERT_EQ(false, tableau_column.empty());
 
-      for (unsigned i=0; i<tableau_column.size(); i++)
+      for (unsigned i=0; i<(tableau_column.size() - 1); i++)
       {
          std::tuple<bool, Card> card = tableau_column[i];
          bool card_is_face_down = (std::get<0>(card) == false);
          EXPECT_EQ(true, card_is_face_down);
       }
+
+      std::tuple<bool, Card> &topmost_card = tableau_column[tableau_column.size()-1];
+      bool card_is_face_up = (std::get<0>(topmost_card) == true);
+      EXPECT_EQ(true, card_is_face_up);
    }
 }
 

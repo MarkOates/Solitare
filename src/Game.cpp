@@ -162,6 +162,10 @@ for (unsigned column=0; column<tableau.size(); column++)
 }
 
 // flip the first card on each column
+for (unsigned column=0; column<tableau.size(); column++)
+{
+   flip_topmost_card_on_tableau_column_to_face_up(column);
+}
 return;
 
 }
