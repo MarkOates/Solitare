@@ -48,7 +48,7 @@ TEST(GameTest, start__has_the_expected_number_of_undelt_cards_in_the_stock)
    ASSERT_EQ(24, game.stock_num_cards());
 }
 
-TEST(GameTest, start__will_set_the_first_card_in_each_tableau_column_face_up_and_the_rest_face_down)
+TEST(GameTest, start__will_set_all_the_cards_in_each_tableau_column_face_down_and_the_first_face_up)
 {
    // TODO
 }
