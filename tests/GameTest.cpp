@@ -57,6 +57,11 @@ TEST(GameTest, start__will_clear_the_waste)
    // TODO
 }
 
+TEST(GameTest, start__will_set_the_game_state_to_playing)
+{
+   // TODO
+}
+
 TEST(GameTest,
    flip_topmost_card_on_tableau_column_to_face_up__with_invalid_tableau_column_num__raises_an_error)
 {
