@@ -11,7 +11,7 @@ class Game
 {
 private:
    Deck deck;
-   std::vector<std::vector<std::tuple<bool, Card>>> row_stacks;
+   std::vector<std::vector<std::tuple<bool, Card>>> tableau;
 
 public:
    Game();
@@ -19,7 +19,7 @@ public:
 
 
    Deck get_deck();
-   std::vector<std::vector<std::tuple<bool, Card>>> get_row_stacks();
+   std::vector<std::vector<std::tuple<bool, Card>>> get_tableau();
 void start();
 int deck_num_cards();
 };

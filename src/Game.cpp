@@ -8,7 +8,7 @@
 
 Game::Game()
    : deck({})
-   , row_stacks({})
+   , tableau({})
 {
 }
 
@@ -24,17 +24,17 @@ Deck Game::get_deck()
 }
 
 
-std::vector<std::vector<std::tuple<bool, Card>>> Game::get_row_stacks()
+std::vector<std::vector<std::tuple<bool, Card>>> Game::get_tableau()
 {
-   return row_stacks;
+   return tableau;
 }
 
 
 void Game::start()
 {
 deck = DeckFactory::generate_classic_52_playing_card_deck();
-row_stacks.clear();
-row_stacks.resize(7);
+tableau.clear();
+tableau.resize(7);
 return;
 
 }
