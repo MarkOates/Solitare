@@ -23,7 +23,6 @@ functions:
 
 
   - name: shuffle
-    type: std::string
     body: |
       std::random_device rd;
       std::mt19937 g(rd());

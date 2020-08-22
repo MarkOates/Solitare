@@ -33,7 +33,7 @@ return;
 
 }
 
-std::string Deck::shuffle()
+void Deck::shuffle()
 {
 std::random_device rd;
 std::mt19937 g(rd());

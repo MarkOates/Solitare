@@ -2,7 +2,6 @@
 
 
 #include <Card.hpp>
-#include <string>
 #include <vector>
 
 
@@ -18,7 +17,7 @@ public:
 
    std::vector<Card> get_cards();
 void put_card_on_top_of_deck(Card card={});
-std::string shuffle();
+void shuffle();
 Card draw_card();
 bool empty();
 bool clear();

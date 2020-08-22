@@ -19,7 +19,7 @@ TEST(GameTest, stock__has_a_getter_and_is_initialized_as_empty)
    ASSERT_EQ(0, game.stock_num_cards());
 }
 
-TEST(GameTest, start__create_a_new_shuffled_52_card_deck)
+TEST(GameTest, start__creates_a_new_shuffled_52_card_deck)
 {
    Game game;
    game.start();

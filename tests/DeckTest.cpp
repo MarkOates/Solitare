@@ -35,6 +35,13 @@ TEST(DeckTest, clear__will_remove_all_cards_from_the_deck)
    ASSERT_EQ(0, deck.num_cards());
 }
 
+TEST(DeckTest, shuffle__on_an_empty_deck_will_do_nothing)
+{
+   Deck deck;
+   deck.shuffle();
+   SUCCEED();
+}
+
 TEST(DeckTest, shuffle__will_randomize_the_order_of_the_cards)
 {
    // TODO
