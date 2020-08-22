@@ -52,3 +52,21 @@ TEST(GameTest, start__will_clear_the_waste)
    // TODO
 }
 
+TEST(GameTest,
+   move_topmost_tableau_row_to_foundation__with_an_invalid_tableau_column_num__raises_an_error)
+{
+   // TODO
+}
+
+TEST(GameTest,
+   move_topmost_tableau_row_to_foundation__on_a_tableau_column_that_is_empty__raises_an_error)
+{
+   // TODO
+}
+
+TEST(GameTest,
+   move_topmost_tableau_row_to_foundation__with_a_facedown_card_on_the_column__raises_an_error)
+{
+   // TODO
+}
+
