@@ -54,11 +54,12 @@ functions:
         type: int
         default_argument: 0
     body: |
+      // tableau_column_num must be valid
       if (tableau_column_num < 0 || tableau_column_num >= tableau.size())
       {
          throw std::runtime_error("invalid tableau_column_num");
       }
-      // tableau_column_num must be valid
+
       // if topmost card is already flipped up, just return
 
       // TODO
