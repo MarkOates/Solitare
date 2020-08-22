@@ -100,6 +100,10 @@ return;
 
 void Game::move_topmost_tableau_row_card_to_foundation(int tableau_column_num)
 {
+// tableau_column_num must be valid
+// tableau_column_num must not be empty
+// the topmost card in the tableau_column_num must be face-up
+
 // TODO
 return;
 
