@@ -112,7 +112,7 @@ functions:
       return;
 
 
-  - name: move_cards_from_tableau_row_to_other_tableau_row
+  - name: move_cards_from_tableau_column_to_other_tableau_column
     parameters:
       - name: source_tableau_column_num
         type: int
@@ -126,14 +126,14 @@ functions:
     body: |
       // source_tableau_column_num must be valid
       // destination_tableau_column_num must be valid
-      // num_cards_from_topmost_card must not exceed size of cards in tableau row
+      // num_cards_from_topmost_card must not exceed size of cards in tableau column
       // num_cards_from_topmost_card must be face up
 
       // TODO
       return;
 
 
-  - name: move_topmost_tableau_row_card_to_foundation
+  - name: move_topmost_tableau_column_card_to_foundation
     parameters:
       - name: tableau_column_num
         type: int
@@ -151,13 +151,13 @@ functions:
     private: true
     body: |
       // deal the cards to all the columns
-      for (unsigned row=0; row<tableau.size(); row++)
+      for (unsigned column=0; column<tableau.size(); column++)
       {
-         std::vector<std::tuple<bool, Card>> &tableau_row = tableau[row];
-         for (unsigned i=0; i<(row+1); i++)
+         std::vector<std::tuple<bool, Card>> &tableau_column = tableau[column];
+         for (unsigned i=0; i<(column+1); i++)
          {
-            Card card_to_place_on_row = stock.draw_card();
-            tableau_row.push_back(std::tuple<bool, Card>(false, card_to_place_on_row));
+            Card card_to_place_on_column = stock.draw_card();
+            tableau_column.push_back(std::tuple<bool, Card>(false, card_to_place_on_column));
          }
       }
 

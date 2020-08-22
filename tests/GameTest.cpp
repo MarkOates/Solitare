@@ -36,8 +36,8 @@ TEST(GameTest, start__will_fill_each_column_in_the_tableau_with_the_expected_num
 
    for (unsigned i=0; i<7; i++)
    {
-      std::vector<std::tuple<bool, Card>> tableau_row = tableau[i];
-      EXPECT_EQ(i+1, tableau_row.size());
+      std::vector<std::tuple<bool, Card>> tableau_column = tableau[i];
+      EXPECT_EQ(i+1, tableau_column.size());
    }
 }
 
