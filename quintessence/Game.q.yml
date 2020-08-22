@@ -150,6 +150,18 @@ functions:
   - name: deal_cards
     private: true
     body: |
+      // deal the cards to all the columns
+      for (unsigned row=0; row<tableau.size(); row++)
+      {
+         std::vector<std::tuple<bool, Card>> &tableau_row = tableau[row];
+         for (unsigned i=0; i<(row+1); i++)
+         {
+            Card card_to_place_on_row = stock.draw_card();
+            tableau_row.push_back(std::tuple<bool, Card>(false, card_to_place_on_row));
+         }
+      }
+
+      // flip the first card on each column
       return;
 
 

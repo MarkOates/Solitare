@@ -19,24 +19,38 @@ TEST(GameTest, stock__has_a_getter_and_is_initialized_as_empty)
    ASSERT_EQ(0, game.stock_num_cards());
 }
 
-TEST(GameTest, start__creates_a_new_shuffled_52_card_deck)
+TEST(GameTest, start__will_create_7_piles_each_column_in_the_tableau)
 {
    Game game;
    game.start();
-   ASSERT_EQ(52, game.stock_num_cards());
+   std::vector<std::vector<std::tuple<bool, Card>>> tableau = game.get_tableau();
+   ASSERT_EQ(7, tableau.size());
 }
 
-TEST(GameTest, start__will_create_7_empty_piles_for_the_tableau)
+TEST(GameTest, start__will_fill_each_column_in_the_tableau_with_the_expected_number_of_cards)
 {
    Game game;
    game.start();
    std::vector<std::vector<std::tuple<bool, Card>>> tableau = game.get_tableau();
    ASSERT_EQ(7, tableau.size());
 
-   for (auto &row_stack : tableau)
+   for (unsigned i=0; i<7; i++)
    {
-      ASSERT_EQ(true, row_stack.empty());
+      std::vector<std::tuple<bool, Card>> tableau_row = tableau[i];
+      EXPECT_EQ(i+1, tableau_row.size());
    }
+}
+
+TEST(GameTest, start__has_the_expected_number_of_undelt_cards_in_the_stock)
+{
+   Game game;
+   game.start();
+   ASSERT_EQ(24, game.stock_num_cards());
+}
+
+TEST(GameTest, start__will_set_the_first_card_in_each_tableau_column_face_up_and_the_rest_face_down)
+{
+   // TODO
 }
 
 TEST(GameTest, start__will_create_4_empty_piles_for_the_foundations)
