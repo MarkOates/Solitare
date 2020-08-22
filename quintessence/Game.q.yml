@@ -72,7 +72,7 @@ functions:
       return;
 
 
-  - name: replenish_waste_with_stock
+  - name: replenish_stock_with_waste
     body: |
       // TODO
       return;

@@ -84,7 +84,7 @@ return;
 
 }
 
-void Game::replenish_waste_with_stock()
+void Game::replenish_stock_with_waste()
 {
 // TODO
 return;
