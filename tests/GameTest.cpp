@@ -38,7 +38,7 @@ TEST(GameTest, start__will_create_4_empty_piles_for_the_foundations)
 {
    Game game;
    game.start();
-   std::vector<std::vector<std::tuple<bool, Card>>> foundations = game.get_foundations();
+   std::vector<std::vector<Deck>> foundations = game.get_foundations();
    ASSERT_EQ(4, foundations.size());
 
    for (auto &row_stack : foundations)
@@ -48,6 +48,24 @@ TEST(GameTest, start__will_create_4_empty_piles_for_the_foundations)
 }
 
 TEST(GameTest, start__will_clear_the_waste)
+{
+   // TODO
+}
+
+TEST(GameTest,
+   replenish_stock_with_waste__when_the_stock_is_not_empty__raises_an_error)
+{
+   // TODO
+}
+
+TEST(GameTest,
+   replenish_stock_with_waste__when_the_waste_is_empty__raises_an_error)
+{
+   // TODO
+}
+
+TEST(GameTest,
+   replenish_stock_with_waste__will_move_the_cards_from_the_waste_to_the_stock_preserving_order)
 {
    // TODO
 }

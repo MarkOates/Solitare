@@ -15,7 +15,7 @@ properties:
     init_with: '{}'
     getter: true
   - name: foundations
-    type: std::vector<std::vector<std::tuple<bool, Card>>>
+    type: std::vector<std::vector<Deck>>
     init_with: '{}'
     getter: true
   - name: state
@@ -74,6 +74,9 @@ functions:
 
   - name: replenish_stock_with_waste
     body: |
+      // stock must be empty
+      // waste must not be empty
+
       // TODO
       return;
 
@@ -147,6 +150,8 @@ dependencies:
 
   - symbol: Deck
     headers: [ Deck.hpp ]
+  - symbol: std::vector<std::vector<Deck>>
+    headers: [ vector, Deck.hpp ]
   - symbol: DeckFactory
     headers: [ DeckFactory.hpp ]
   - symbol: std::vector<std::vector<std::tuple<bool, Card>>>

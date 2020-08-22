@@ -39,7 +39,7 @@ std::vector<std::vector<std::tuple<bool, Card>>> Game::get_tableau()
 }
 
 
-std::vector<std::vector<std::tuple<bool, Card>>> Game::get_foundations()
+std::vector<std::vector<Deck>> Game::get_foundations()
 {
    return foundations;
 }
@@ -86,6 +86,9 @@ return;
 
 void Game::replenish_stock_with_waste()
 {
+// stock must be empty
+// waste must not be empty
+
 // TODO
 return;
 

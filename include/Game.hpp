@@ -14,7 +14,7 @@ private:
    Deck stock;
    Deck waste;
    std::vector<std::vector<std::tuple<bool, Card>>> tableau;
-   std::vector<std::vector<std::tuple<bool, Card>>> foundations;
+   std::vector<std::vector<Deck>> foundations;
    std::string state;
 
 public:
@@ -25,7 +25,7 @@ public:
    Deck get_stock();
    Deck get_waste();
    std::vector<std::vector<std::tuple<bool, Card>>> get_tableau();
-   std::vector<std::vector<std::tuple<bool, Card>>> get_foundations();
+   std::vector<std::vector<Deck>> get_foundations();
 void start();
 void flip_topmost_card_on_tableau_column_to_face_up(int tableau_column_num=0);
 void place_top_stock_card_on_waste();
