@@ -70,3 +70,15 @@ TEST(GameTest,
    // TODO
 }
 
+TEST(GameTest,
+   move_topmost_tableau_row_to_foundation__will_remove_the_card_from_the_tableau_row)
+{
+   // TODO
+}
+
+TEST(GameTest,
+   move_topmost_tableau_row_to_foundation__will_add_the_topmost_card_to_the_foundation)
+{
+   // TODO
+}
+
