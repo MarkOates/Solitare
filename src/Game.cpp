@@ -7,8 +7,9 @@
 
 
 Game::Game()
-   : deck({})
+   : stock({})
    , tableau({})
+   , foundations({})
 {
 }
 
@@ -18,9 +19,9 @@ Game::~Game()
 }
 
 
-Deck Game::get_deck()
+Deck Game::get_stock()
 {
-   return deck;
+   return stock;
 }
 
 
@@ -30,18 +31,29 @@ std::vector<std::vector<std::tuple<bool, Card>>> Game::get_tableau()
 }
 
 
+std::vector<std::vector<std::tuple<bool, Card>>> Game::get_foundations()
+{
+   return foundations;
+}
+
+
 void Game::start()
 {
-deck = DeckFactory::generate_classic_52_playing_card_deck();
+stock = DeckFactory::generate_classic_52_playing_card_deck();
+
 tableau.clear();
 tableau.resize(7);
+
+foundations.clear();
+foundations.resize(4);
+
 return;
 
 }
 
-int Game::deck_num_cards()
+int Game::stock_num_cards()
 {
-return deck.num_cards();
+return stock.num_cards();
 
 }
 

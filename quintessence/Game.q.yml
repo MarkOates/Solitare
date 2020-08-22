@@ -2,11 +2,15 @@
 properties:
 
 
-  - name: deck
+  - name: stock
     type: Deck
     init_with: '{}'
     getter: true
   - name: tableau
+    type: std::vector<std::vector<std::tuple<bool, Card>>>
+    init_with: '{}'
+    getter: true
+  - name: foundations
     type: std::vector<std::vector<std::tuple<bool, Card>>>
     init_with: '{}'
     getter: true
@@ -18,18 +22,23 @@ functions:
   - name: start
     type: void
     body: |
-      deck = DeckFactory::generate_classic_52_playing_card_deck();
+      stock = DeckFactory::generate_classic_52_playing_card_deck();
+
       tableau.clear();
       tableau.resize(7);
+
+      foundations.clear();
+      foundations.resize(4);
+
       return;
     body_dependency_symbols:
       - DeckFactory
 
 
-  - name: deck_num_cards
+  - name: stock_num_cards
     type: int
     body: |
-      return deck.num_cards();
+      return stock.num_cards();
 
 
 dependencies:

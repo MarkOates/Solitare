@@ -10,18 +10,20 @@
 class Game
 {
 private:
-   Deck deck;
+   Deck stock;
    std::vector<std::vector<std::tuple<bool, Card>>> tableau;
+   std::vector<std::vector<std::tuple<bool, Card>>> foundations;
 
 public:
    Game();
    ~Game();
 
 
-   Deck get_deck();
+   Deck get_stock();
    std::vector<std::vector<std::tuple<bool, Card>>> get_tableau();
+   std::vector<std::vector<std::tuple<bool, Card>>> get_foundations();
 void start();
-int deck_num_cards();
+int stock_num_cards();
 };
 
 
