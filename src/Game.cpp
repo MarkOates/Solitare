@@ -8,6 +8,7 @@
 
 Game::Game()
    : stock({})
+   , waste({})
    , tableau({})
    , foundations({})
 {
@@ -22,6 +23,12 @@ Game::~Game()
 Deck Game::get_stock()
 {
    return stock;
+}
+
+
+std::vector<Card> Game::get_waste()
+{
+   return waste;
 }
 
 
@@ -43,6 +50,8 @@ stock = DeckFactory::generate_classic_52_playing_card_deck();
 
 tableau.clear();
 tableau.resize(7);
+
+waste.clear();
 
 foundations.clear();
 foundations.resize(4);

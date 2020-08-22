@@ -47,3 +47,8 @@ TEST(GameTest, start__will_create_4_empty_piles_for_the_foundations)
    }
 }
 
+TEST(GameTest, start__will_clear_the_waste)
+{
+   // TODO
+}
+
