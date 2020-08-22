@@ -50,6 +50,7 @@ void Game::start()
 // Rules of solitare: https://bicyclecards.com/how-to-play/solitaire/
 
 stock = DeckFactory::generate_classic_52_playing_card_deck();
+stock.shuffle();
 
 tableau.clear();
 tableau.resize(7);
