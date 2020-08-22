@@ -18,6 +18,9 @@ properties:
     type: std::vector<std::vector<std::tuple<bool, Card>>>
     init_with: '{}'
     getter: true
+  - name: state
+    type: std::string
+    init_with: '"playing"'
 
 
 functions:
@@ -36,9 +39,21 @@ functions:
       foundations.clear();
       foundations.resize(4);
 
+      set_state_playing();
+
       return;
     body_dependency_symbols:
       - DeckFactory
+
+
+  - name: flip_topmost_card_on_tableau_column_to_face_up
+    parameters:
+      - name: tableau_column_num
+        type: int
+        default_argument: 0
+    body: |
+      // TODO
+      return;
 
 
   - name: place_top_stock_card_on_waste
@@ -54,6 +69,66 @@ functions:
         default_argument: 0
     body: |
       // TODO
+      return;
+
+
+  - name: replenish_waste_with_stock
+    body: |
+      // TODO
+      return;
+
+
+  - name: move_cards_from_tableau_row_to_other_tableau_row
+    parameters:
+      - name: source_tableau_column_num
+        type: int
+        default_argument: 0
+      - name: destination_tableau_column_num
+        type: int
+        default_argument: 0
+      - name: num_cards_from_topmost_card
+        type: int
+        default_argument: 0
+    body: |
+      // TODO
+      return;
+
+
+  - name: move_topmost_tableau_row_card_to_foundation
+    parameters:
+      - name: tableau_column_num
+        type: int
+        default_argument: 0
+    body: |
+      // TODO
+      return;
+
+
+  - name: set_state_playing
+    private: true
+    body: |
+      state = "playing";
+      return;
+
+
+  - name: check_game_win_or_lose
+    private: true
+    body: |
+      // TODO
+      return;
+
+
+  - name: set_state_game_won
+    private: true
+    body: |
+      state = "game_won";
+      return;
+
+
+  - name: set_state_game_lost
+    private: true
+    body: |
+      state = "game_over";
       return;
 
 
