@@ -60,6 +60,20 @@ return;
 
 }
 
+void Game::place_top_stock_card_on_waste()
+{
+// TODO
+return;
+
+}
+
+void Game::place_top_waste_card_on_foundation(int foundation_index_num)
+{
+// TODO
+return;
+
+}
+
 int Game::stock_num_cards()
 {
 return stock.num_cards();

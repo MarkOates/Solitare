@@ -41,6 +41,22 @@ functions:
       - DeckFactory
 
 
+  - name: place_top_stock_card_on_waste
+    body: |
+      // TODO
+      return;
+
+
+  - name: place_top_waste_card_on_foundation
+    parameters:
+      - name: foundation_index_num
+        type: int
+        default_argument: 0
+    body: |
+      // TODO
+      return;
+
+
   - name: stock_num_cards
     type: int
     body: |
