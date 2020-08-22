@@ -12,7 +12,7 @@ class Game
 {
 private:
    Deck stock;
-   std::vector<Card> waste;
+   Deck waste;
    std::vector<std::vector<std::tuple<bool, Card>>> tableau;
    std::vector<std::vector<std::tuple<bool, Card>>> foundations;
    std::string state;
@@ -23,7 +23,7 @@ public:
 
 
    Deck get_stock();
-   std::vector<Card> get_waste();
+   Deck get_waste();
    std::vector<std::vector<std::tuple<bool, Card>>> get_tableau();
    std::vector<std::vector<std::tuple<bool, Card>>> get_foundations();
 void start();

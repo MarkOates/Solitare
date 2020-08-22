@@ -47,6 +47,13 @@ functions:
     body: return cards.empty();
 
 
+  - name: clear
+    type: bool
+    body: |
+      cards.clear();
+      return true;
+
+
   - name: num_cards
     type: int
     body: return cards.size();

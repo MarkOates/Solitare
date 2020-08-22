@@ -27,7 +27,7 @@ Deck Game::get_stock()
 }
 
 
-std::vector<Card> Game::get_waste()
+Deck Game::get_waste()
 {
    return waste;
 }

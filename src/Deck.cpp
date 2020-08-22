@@ -61,6 +61,13 @@ bool Deck::empty()
 return cards.empty();
 }
 
+bool Deck::clear()
+{
+cards.clear();
+return true;
+
+}
+
 int Deck::num_cards()
 {
 return cards.size();

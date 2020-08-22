@@ -7,7 +7,7 @@ properties:
     init_with: '{}'
     getter: true
   - name: waste
-    type: std::vector<Card>
+    type: Deck
     init_with: '{}'
     getter: true
   - name: tableau
@@ -145,8 +145,6 @@ dependencies:
     headers: [ Deck.hpp ]
   - symbol: DeckFactory
     headers: [ DeckFactory.hpp ]
-  - symbol: std::vector<Card>
-    headers: [ vector, Card.hpp ]
   - symbol: std::vector<std::vector<std::tuple<bool, Card>>>
     headers: [ vector, tuple, Card.hpp ]
 

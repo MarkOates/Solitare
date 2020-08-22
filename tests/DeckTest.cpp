@@ -22,6 +22,19 @@ TEST(DeckTest, put_card_on_top_of_deck__will_place_a_card_on_the_deck)
    ASSERT_EQ(1, deck.num_cards());
 }
 
+TEST(DeckTest, clear__will_remove_all_cards_from_the_deck)
+{
+   Deck deck;
+
+   deck.put_card_on_top_of_deck(Card());
+   deck.put_card_on_top_of_deck(Card());
+   deck.put_card_on_top_of_deck(Card());
+
+   deck.clear();
+
+   ASSERT_EQ(0, deck.num_cards());
+}
+
 TEST(DeckTest, shuffle__will_randomize_the_order_of_the_cards)
 {
    // TODO
