@@ -53,6 +53,24 @@ TEST(GameTest, start__will_clear_the_waste)
 }
 
 TEST(GameTest,
+   flip_topmost_card_on_tableau_column_to_face_up__with_invalid_tableau_column_num__raises_an_error)
+{
+   // TODO
+}
+
+TEST(GameTest,
+   flip_topmost_card_on_tableau_column_to_face_up__if_the_topmost_card_is_already_up__does_nothing)
+{
+   // TODO
+}
+
+TEST(GameTest,
+   flip_topmost_card_on_tableau_column_to_face_up__flips_the_topmost_card_on_the_tableau_column)
+{
+   // TODO
+}
+
+TEST(GameTest,
    replenish_stock_with_waste__when_the_stock_is_not_empty__raises_an_error)
 {
    // TODO

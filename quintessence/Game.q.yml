@@ -52,7 +52,10 @@ functions:
         type: int
         default_argument: 0
     body: |
-      // TODO
+      // tableau_column_num must be valid
+      // 
+
+      // if topmost card is already flipped up, do nothing
       return;
 
 

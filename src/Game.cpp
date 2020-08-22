@@ -65,7 +65,10 @@ return;
 
 void Game::flip_topmost_card_on_tableau_column_to_face_up(int tableau_column_num)
 {
-// TODO
+// tableau_column_num must be valid
+// 
+
+// if topmost card is already flipped up, do nothing
 return;
 
 }
