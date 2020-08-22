@@ -50,7 +50,21 @@ TEST(GameTest, start__has_the_expected_number_of_undelt_cards_in_the_stock)
 
 TEST(GameTest, start__will_set_all_the_cards_in_each_tableau_column_face_down_and_the_first_face_up)
 {
-   // TODO
+   Game game;
+   game.start();
+   std::vector<std::vector<std::tuple<bool, Card>>> tableau = game.get_tableau();
+   ASSERT_EQ(7, tableau.size());
+
+   for (unsigned column=0; column<7; column++)
+   {
+      std::vector<std::tuple<bool, Card>> tableau_column = tableau[column];
+      for (unsigned i=0; i<tableau_column.size(); i++)
+      {
+         std::tuple<bool, Card> card = tableau_column[i];
+         bool card_is_face_down = (std::get<0>(card) == false);
+         EXPECT_EQ(true, card_is_face_down);
+      }
+   }
 }
 
 TEST(GameTest, start__will_create_4_empty_piles_for_the_foundations)
