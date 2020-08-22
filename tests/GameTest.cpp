@@ -1,6 +1,11 @@
 
 #include <gtest/gtest.h>
 
+#define EXPECT_THROW_WITH_MESSAGE(code, raised_exception_type, expected_exception_message) \
+   try { code; FAIL() << "Expected " # raised_exception_type; } \
+   catch ( raised_exception_type const &err ) { EXPECT_EQ(std::string(expected_exception_message), err.what()); } \
+   catch (...) { FAIL() << "Expected " # raised_exception_type; }
+
 #include <Game.hpp>
 
 TEST(GameTest, can_be_created_without_blowing_up)
@@ -55,7 +60,18 @@ TEST(GameTest, start__will_clear_the_waste)
 TEST(GameTest,
    flip_topmost_card_on_tableau_column_to_face_up__with_invalid_tableau_column_num__raises_an_error)
 {
-   // TODO
+   Game game;
+   game.start();
+   std::vector<int> invalid_column_nums = { -1, 99, -999, 7, 8 };
+   for (auto &invalid_column_num : invalid_column_nums)
+   {
+      std::string expected_error_message = "invalid tableau_column_num";
+      EXPECT_THROW_WITH_MESSAGE(
+         game.flip_topmost_card_on_tableau_column_to_face_up(invalid_column_num),
+         std::runtime_error,
+         expected_error_message
+      );
+   }
 }
 
 TEST(GameTest,

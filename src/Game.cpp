@@ -67,6 +67,10 @@ return;
 
 void Game::flip_topmost_card_on_tableau_column_to_face_up(int tableau_column_num)
 {
+if (tableau_column_num < 0 || tableau_column_num >= tableau.size())
+{
+   throw std::runtime_error("invalid tableau_column_num");
+}
 // tableau_column_num must be valid
 // if topmost card is already flipped up, just return
 
