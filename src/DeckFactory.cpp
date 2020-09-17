@@ -16,7 +16,7 @@ DeckFactory::~DeckFactory()
 }
 
 
-Deck DeckFactory::generate_classic_52_playing_card_deck()
+Deck DeckFactory::generate_standard_52_card_deck()
 {
 // "When you first open a deck, you'll usually see the Jokers at the face, followed by the
 // Spades and Diamonds in ascending order, then the Clubs and Hearts in descending order.

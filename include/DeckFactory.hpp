@@ -13,7 +13,7 @@ public:
    ~DeckFactory();
 
 
-static Deck generate_classic_52_playing_card_deck();
+static Deck generate_standard_52_card_deck();
 };
 
 
