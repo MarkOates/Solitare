@@ -90,7 +90,7 @@ std::tuple<bool, Card> &topmost_card = tableau_column.back();
 if (std::get<0>(topmost_card) == true) return;
 
 // flip the to face up
-if (std::get<0>(topmost_card) == true) return;
+std::get<0>(topmost_card) = true;
 
 return;
 

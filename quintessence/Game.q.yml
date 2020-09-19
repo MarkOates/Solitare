@@ -77,7 +77,7 @@ functions:
       if (std::get<0>(topmost_card) == true) return;
 
       // flip the to face up
-      if (std::get<0>(topmost_card) == true) return;
+      std::get<0>(topmost_card) = true;
 
       return;
 
