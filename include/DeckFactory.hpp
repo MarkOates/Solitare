@@ -12,8 +12,7 @@ public:
    DeckFactory();
    ~DeckFactory();
 
-
-static Deck generate_standard_52_card_deck();
+   static Deck generate_standard_52_card_deck();
 };
 
 
