@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<head>
+<style>
+.property
+{
+  color: blue;
+}
+.private_property
+{
+  color: lightblue;
+}
+
+.method
+{
+  color: red;
+}
+
+.private_method
+{
+  color: pink;
+}
+
+.dependency
+{
+  color: green;
+}
+
+.component
+{
+  padding: 20 10 20 10;
+  margin: 20 10 20 10;
+  background-color: #dfdfdf;
+}
+
+.component h3
+{
+  font-family: 'Arial';
+}
+</style>
+</head>
+<body>
+<h1>TOC</h1>
+<ul>
+  <li><a href="#quintessence/Card.q.yml">quintessence/Card.q.yml</a></li>
+</ul>
+<ul>
+  <li><a href="#quintessence/Deck.q.yml">quintessence/Deck.q.yml</a></li>
+</ul>
+<ul>
+  <li><a href="#quintessence/DeckFactory.q.yml">quintessence/DeckFactory.q.yml</a></li>
+</ul>
+<ul>
+  <li><a href="#quintessence/Game.q.yml">quintessence/Game.q.yml</a></li>
+</ul>
+<h1>Components</h1>
+<ul>
+  <div class="component">
+    <h3 id="quintessence/Card.q.yml">quintessence/Card.q.yml</h3>
+<ul>
+  <li class="property">value</li>
+  <li class="property">suit</li>
+</ul>
+  </div>
+</ul>
+<ul>
+  <div class="component">
+    <h3 id="quintessence/Deck.q.yml">quintessence/Deck.q.yml</h3>
+<ul>
+  <li class="property">cards</li>
+  <li class="method">put_card_on_top(1)</li>
+  <li class="method">shuffle()</li>
+  <li class="method">draw_card()</li>
+  <li class="method">empty()</li>
+  <li class="method">clear()</li>
+  <li class="method">num_cards()</li>
+  <li class="dependency">{"symbol"=>"std::vector<Card>", "headers"=>["vector", "Card.hpp"]}</li>
+  <li class="dependency">{"symbol"=>"Card", "headers"=>["vector", "Card.hpp"]}</li>
+  <li class="dependency">{"symbol"=>"std::shuffle", "headers"=>["random", "algorithm"]}</li>
+</ul>
+  </div>
+</ul>
+<ul>
+  <div class="component">
+    <h3 id="quintessence/DeckFactory.q.yml">quintessence/DeckFactory.q.yml</h3>
+<ul>
+  <li class="method">generate_standard_52_card_deck()</li>
+  <li class="dependency">{"symbol"=>"Deck", "headers"=>["Deck.hpp"]}</li>
+</ul>
+  </div>
+</ul>
+<ul>
+  <div class="component">
+    <h3 id="quintessence/Game.q.yml">quintessence/Game.q.yml</h3>
+<ul>
+  <li class="property">stock</li>
+  <li class="property">waste</li>
+  <li class="property">tableau</li>
+  <li class="property">foundations</li>
+  <li class="property">state</li>
+  <li class="method">start()</li>
+  <li class="method">flip_topmost_card_on_tableau_column_to_face_up(1)</li>
+  <li class="method">place_top_stock_card_on_waste()</li>
+  <li class="method">place_top_waste_card_on_foundation(1)</li>
+  <li class="method">replenish_stock_with_waste()</li>
+  <li class="method">move_cards_from_tableau_column_to_other_tableau_column(3)</li>
+  <li class="method">move_topmost_tableau_column_card_to_foundation(1)</li>
+  <li class="private_method">deal_cards()</li>
+  <li class="private_method">set_state_playing()</li>
+  <li class="private_method">check_game_win_or_lose()</li>
+  <li class="private_method">set_state_game_won()</li>
+  <li class="private_method">set_state_game_lost()</li>
+  <li class="method">stock_num_cards()</li>
+  <li class="dependency">{"symbol"=>"Deck", "headers"=>["Deck.hpp"]}</li>
+  <li class="dependency">{"symbol"=>"std::vector<std::vector<Deck>>", "headers"=>["vector", "Deck.hpp"]}</li>
+  <li class="dependency">{"symbol"=>"DeckFactory", "headers"=>["DeckFactory.hpp"]}</li>
+  <li class="dependency">{"symbol"=>"std::vector<std::vector<std::tuple<bool, Card>>>", "headers"=>["vector", "tuple", "Card.hpp"]}</li>
+</ul>
+  </div>
+</ul>
+</body>
